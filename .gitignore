@@ -3,3 +3,8 @@
 .venv/
 temp.ipynb
 data/
+
+*.pth
+*.jpg
+
+*.pptx
