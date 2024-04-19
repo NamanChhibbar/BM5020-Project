@@ -4,6 +4,13 @@ from torch import nn
 from torchvision import models
 from torchvision import transforms as T
 
+def get_device():
+    if torch.cuda.is_available():
+        return torch.device("cuda")
+    if torch.backends.mps.is_available():
+        return torch.device("mps")
+    return torch.device("cpu")
+
 # defining the model
 class Resnest(nn.Module):
     def __init__(self, model_name='resnest101e'):
