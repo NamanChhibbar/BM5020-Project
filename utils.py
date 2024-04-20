@@ -1,8 +1,10 @@
-import numpy as np, torch, cv2
+import numpy as np
+import torch
+import cv2
 from matplotlib import pyplot as plt, cm
 from torch import nn
-from torchvision import models
-from torchvision import transforms as T
+import torchvision.models as models
+import torchvision.transforms as T
 
 def get_device():
     if torch.cuda.is_available():
