@@ -35,14 +35,13 @@ def preprocess_image(image):
     return image
 
 def postprocess_output(output, num_classes):
-    output = output.cpu().numpy().squeeze()
+    output = output.detach().numpy().squeeze()
     segmentation_map = np.argmax(output, axis=0)
     print(np.unique(segmentation_map))
     segmentation_map = cm.tab20(segmentation_map.astype(float) / num_classes)
     return segmentation_map
 
-
-def visualize_results(image, masks):
+def visualize_results(image, masks, input_boxes=None):
     
     fig, ax = plt.subplots(1, 2, figsize=(10, 5))
     
@@ -53,8 +52,9 @@ def visualize_results(image, masks):
     ax[1].imshow(image)
     for mask in masks:
         show_mask(mask.cpu().numpy(), ax[1], random_color=True)
-    # for box /in input_boxes:
-    #     show_box(+box.cpu().numpy(), plt.gca())
+    if input_boxes is not None:
+        for box in input_boxes:
+            show_box(+box.cpu().numpy(), plt.gca())
     plt.axis('off')
     plt.show()
 
