@@ -8,3 +8,10 @@ data/
 *.jpg
 
 *.pptx
+
+Report/*.aux
+Report/*.log
+Report/*.toc
+Report/*.out
+Report/*.synctex.gz
+
