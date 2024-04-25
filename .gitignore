@@ -12,4 +12,19 @@ Data/
 
 temp*
 *pkl
-annotation.ipynb
+
+Annoted_images/
+
+*.pth
+*.jpg
+
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.brf
+*.blg
+*.bbl
+*.out
+*.bib

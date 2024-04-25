@@ -1,7 +1,9 @@
 \documentclass[10pt,twocolumn,letterpaper]{article}
 
 %%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
-\usepackage{cvpr}              % To produce the CAMERA-READY version
+\usepackage{cvpr}
+\usepackage{cite}
+              % To produce the CAMERA-READY version
 % \usepackage[review]{cvpr}      % To produce the REVIEW version
 % \usepackage[pagenumbers]{cvpr} % To force page numbers, e.g. for an arXiv version
 
@@ -17,6 +19,8 @@
 % (Or just hit 'q' on the first LaTeX run, let it finish, and you should be clear).
 \definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
 \usepackage[pagebackref,breaklinks,colorlinks,citecolor=cvprblue]{hyperref}
+% \bibliographystyle{ieee}
+% \bibliography{references}
 
 
 %%%%%%%%% PAPER ID  - PLEASE UPDATE
@@ -33,7 +37,9 @@
 % (Or just hit 'q' on the first LaTeX run, let it finish, and you should be clear).
 \definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
 \usepackage[pagebackref,breaklinks,colorlinks,citecolor=cvprblue]{hyperref}
-
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amsmath}
 
 %%%%%%%%% PAPER ID  - PLEASE UPDATE
 \def\paperID{*****} % *** Enter the Paper ID here
@@ -56,12 +62,15 @@ Naman Chhibhar\\
 \maketitle
 \input{sec/0_abstract}    
 \input{sec/1_intro}
+\input{sec/Methodology}
+\input{sec/Architecture}
+\input{sec/results}
+\input{sec/References}
 {
     \small
     \nocite{*}
     \bibliographystyle{ieeenat_fullname}
     % \bibliography{main}
-    
 }
 
 % WARNING: do not forget to delete the supplementary pages from your submission 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.4)  23 APR 2024 21:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.4)  23 APR 2024 23:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -332,7 +332,29 @@ File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
 \Fld@listcount=\count306
 \c@bookmark@seq@number=\count307
 \Hy@SectionHShift=\skip55
-) (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count308
+\lst@gtempboxa=\box55
+\lst@token=\toks31
+\lst@length=\count309
+\lst@currlwidth=\dimen178
+\lst@column=\count310
+\lst@pos=\count311
+\lst@lostspace=\dimen179
+\lst@width=\dimen180
+\lst@newlines=\count312
+\lst@lineno=\count313
+\lst@maxwidth=\dimen181
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count314
+\lst@skipnumbers=\count315
+\lst@framebox=\box56
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
 Package cleveref Info: `hyperref' support loaded on input line 2370.
 LaTeX Info: Redefining \cref on input line 2370.
@@ -345,50 +367,51 @@ LaTeX Info: Redefining \cpagerefrange on input line 2370.
 LaTeX Info: Redefining \Cpagerefrange on input line 2370.
 LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `listings' support loaded on input line 3131.
 Package cleveref Info: always capitalise cross-reference names on input line 7830.
 Package cleveref Info: always capitalise cross-reference names on input line 7852.
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 55.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 61.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count308
-\l__pdf_internal_box=\box55
+\l__color_backend_stack_int=\count316
+\l__pdf_internal_box=\box57
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count309
-\scratchdimen=\dimen178
-\scratchbox=\box56
-\nofMPsegments=\count310
-\nofMParguments=\count311
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count312
-\MPscratchDim=\dimen179
-\MPnumerator=\count313
-\makeMPintoPDFobject=\count314
-\everyMPtoPDFconversion=\toks32
+\scratchcounter=\count317
+\scratchdimen=\dimen182
+\scratchbox=\box58
+\nofMPsegments=\count318
+\nofMParguments=\count319
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count320
+\MPscratchDim=\dimen183
+\MPnumerator=\count321
+\makeMPintoPDFobject=\count322
+\everyMPtoPDFconversion=\toks33
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
  (/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
@@ -403,27 +426,28 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros (/usr/share/texlive/texmf-dist/tex/latex/eepic/epic.sty
 Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
-\@@multicnt=\count315
-\d@lta=\count316
-\@delta=\dimen180
-\@@delta=\dimen181
-\@gridcnt=\count317
-\@joinkind=\count318
-\@dotgap=\dimen182
-\@ddotgap=\dimen183
-\@x@diff=\count319
-\@y@diff=\count320
-\x@diff=\dimen184
-\y@diff=\dimen185
-\@dotbox=\box57
-\num@segments=\count321
-\num@segmentsi=\count322
+\@@multicnt=\count323
+\d@lta=\count324
+\@delta=\dimen184
+\@@delta=\dimen185
+\@gridcnt=\count325
+\@joinkind=\count326
+\@dotgap=\dimen186
+\@ddotgap=\dimen187
+\@x@diff=\count327
+\@y@diff=\count328
+\x@diff=\dimen188
+\y@diff=\dimen189
+\@dotbox=\box59
+\num@segments=\count329
+\num@segmentsi=\count330
 \@datafile=\read2
 )
-Package hyperref Info: Link coloring ON on input line 55.
+Package hyperref Info: Link coloring ON on input line 61.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -431,48 +455,143 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count323
+\c@section@level=\count331
 )
-LaTeX Info: Redefining \ref on input line 55.
-LaTeX Info: Redefining \pageref on input line 55.
-LaTeX Info: Redefining \nameref on input line 55.
+LaTeX Info: Redefining \ref on input line 61.
+LaTeX Info: Redefining \pageref on input line 61.
+LaTeX Info: Redefining \nameref on input line 61.
  (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-Package backref Info: ** backref set up for natbib ** on input line 55.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
+Package backref Info: ** backref set up for natbib ** on input line 61.
+\c@lstlisting=\count332
+LaTeX Font Info:    Trying to load font information for U+msa on input line 63.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 57.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 63.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) (./sec/0_abstract.tex) (./sec/1_intro.tex) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+) (./sec/0_abstract.tex) (./sec/1_intro.tex) (./sec/Methodology.tex
+<annoted.png, id=45, 573.8238pt x 227.6505pt>
+File: annoted.png Graphic file (type png)
+<use annoted.png>
+Package pdftex.def Info: annoted.png  used on input line 9.
+(pdftex.def)             Requested size: 198.73946pt x 78.84518pt.
 
 
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-] (./main.aux)
+) (./sec/Architecture.tex
+<deeplabv3.png, id=47, 853.1875pt x 463.7325pt>
+File: deeplabv3.png Graphic file (type png)
+<use deeplabv3.png>
+Package pdftex.def Info: deeplabv3.png  used on input line 13.
+(pdftex.def)             Requested size: 298.11678pt x 162.03992pt.
+
+Overfull \hbox (60.98083pt too wide) in paragraph at lines 13--14
+ [][] 
+ []
+
+<atrous-convolution.png, id=50, 792.9625pt x 658.46pt>
+File: atrous-convolution.png Graphic file (type png)
+<use atrous-convolution.png>
+Package pdftex.def Info: atrous-convolution.png  used on input line 21.
+(pdftex.def)             Requested size: 248.42812pt x 206.2907pt.
+
+Overfull \hbox (11.29218pt too wide) in paragraph at lines 21--22
+ [][] 
+ []
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./annoted.png> <./deeplabv3.png>]
+<resnet.png, id=68, 853.1875pt x 279.0425pt>
+File: resnet.png Graphic file (type png)
+<use resnet.png>
+Package pdftex.def Info: resnet.png  used on input line 39.
+(pdftex.def)             Requested size: 248.42812pt x 81.2481pt.
+
+Overfull \hbox (11.29218pt too wide) in paragraph at lines 39--40
+ [][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 54.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)) (./sec/results.tex
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 30.
+
+<Plots/loss.png, id=71, 416.2752pt x 312.2064pt>
+File: Plots/loss.png Graphic file (type png)
+<use Plots/loss.png>
+Package pdftex.def Info: Plots/loss.png  used on input line 32.
+(pdftex.def)             Requested size: 198.73946pt x 149.05704pt.
+<Plots/accuracy.png, id=72, 428.5611pt x 312.2064pt>
+File: Plots/accuracy.png Graphic file (type png)
+<use Plots/accuracy.png>
+Package pdftex.def Info: Plots/accuracy.png  used on input line 39.
+(pdftex.def)             Requested size: 198.73946pt x 144.78383pt.
+<Plots/iou.png, id=73, 416.2752pt x 312.2064pt>
+File: Plots/iou.png Graphic file (type png)
+<use Plots/iou.png>
+Package pdftex.def Info: Plots/iou.png  used on input line 46.
+(pdftex.def)             Requested size: 198.73946pt x 149.05704pt.
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 51.
+
+<Plots/dice.png, id=74, 435.0654pt x 312.2064pt>
+File: Plots/dice.png Graphic file (type png)
+<use Plots/dice.png>
+Package pdftex.def Info: Plots/dice.png  used on input line 53.
+(pdftex.def)             Requested size: 198.73946pt x 142.61627pt.
+) (./sec/References.tex (./main.brf)
+\tf@brf=\write4
+\openout4 = `main.brf'.
+
+ [2 <./atrous-convolution.png> <./resnet.png>]
+Overfull \hbox (182.46176pt too wide) in paragraph at lines 7--7
+\OT1/ptm/m/n/10 Hashem/publication/352562164/figure/fig2/AS:1037138292396032@1624284446240/DeepLabv3-
+ []
+
+
+Overfull \hbox (266.90994pt too wide) in paragraph at lines 9--9
+[]\OT1/ptm/m/n/10 https://www.researchgate.net/publication/352562164/figure/fig1/AS:1037138292396032@1624284446239/Illustrations-
+ []
+
+
+Overfull \hbox (102.03062pt too wide) in paragraph at lines 11--11
+[]\OT1/ptm/m/n/10 https://miro.medium.com/v2/resize:fit:850/1*C8jf92MeHZnxnbpMkz6jkQ.png
+ []
+
+) [3 <./Plots/loss.png> <./Plots/accuracy.png> <./Plots/iou.png> <./Plots/dice.png>] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7BBB2FA21A3D70A75CBA132EB11245C3;274.
+(rerunfilecheck)             Checksum: F1AF48D539F4757EED0D9C8743A6EDE8;1283.
+Package rerunfilecheck Info: File `main.brf' has not changed.
+(rerunfilecheck)             Checksum: FBAA6B611BCAA0FB2935A8C1F00231B1;216.
  ) 
 Here is how much of TeX's memory you used:
- 14736 strings out of 480247
- 244039 string characters out of 5896152
- 560361 words of memory out of 5000000
- 32477 multiletter control sequences out of 15000+600000
- 487686 words of font info for 66 fonts, out of 8000000 for 9000
+ 16589 strings out of 480247
+ 269633 string characters out of 5896152
+ 597978 words of memory out of 5000000
+ 34250 multiletter control sequences out of 15000+600000
+ 492461 words of font info for 78 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,9n,91p,623b,367s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,9n,91p,682b,1261s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (1 page, 53646 bytes).
+Output written on main.pdf (3 pages, 570166 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
- 4 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 146 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
