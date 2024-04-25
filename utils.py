@@ -49,8 +49,9 @@ def visualize_results(image, masks, input_boxes=None):
     
     ax[0].imshow(image)
     ax[0].set_title('Input Image')
+    ax[0].axis('off')
     
-    ax[1].set_title('Segmented Image')
+    ax[1].set_title('Annoted Image')
     ax[1].imshow(image)
     for mask in masks:
         show_mask(mask.cpu().numpy(), ax[1], random_color=True)
@@ -60,7 +61,7 @@ def visualize_results(image, masks, input_boxes=None):
     plt.axis('off')
     plt.show()
 
-def show_mask(mask, ax, random_color=False):
+def show_mask(mask, ax, random_color=True):
     if random_color:
         color = np.concatenate([np.random.random(3), np.array([0.6])], axis=0)
     else:
