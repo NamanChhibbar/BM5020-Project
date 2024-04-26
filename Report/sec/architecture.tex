@@ -1,6 +1,5 @@
 \section{Architecture}
 
-
 % writing the architecture of the model
 A DeepLabv3 model with Resnet-101 backbone and FCN auxilary classifier is trained with data. 
 
@@ -10,7 +9,7 @@ DeepLabv3 is a semantic segmentation model that uses Atrous convolution to captu
 It take N feature maps as input from the ResNet-101 backbone and outputs N*4*H*W tensor, where N is the batch size, 4 is the number of classes, H is the height, and W is the width of the image.The model outputs a probability distribution over the classes for each pixel in the input image.  
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{deeplabv3.png}
+    \includegraphics[width=0.6\textwidth]{Images/deeplabv3.png}
     \caption{DeepLabv3 architecture \cite{deeplabv3-image}}
     \label{fig:deeplabv3}
 
@@ -18,7 +17,7 @@ It take N feature maps as input from the ResNet-101 backbone and outputs N*4*H*W
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{atrous-convolution.png}
+    \includegraphics[width=0.5\textwidth]{Images/atrous-convolution.png}
     \caption{Atrous Spatial Pyramid Pooling (ASPP) in DeepLabv3\\ (a) Conv 3x3, rate=1 (b) Conv 3x3, rate=2 \\ \cite{atrous-convolution-image}}
     \label{fig:atrous-convolution}
 
@@ -36,7 +35,7 @@ Here, N = 1, as we are training the model with a single image at a time (small d
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{resnet.png}
+    \includegraphics[width=0.5\textwidth]{Images/resnet.png}
     \caption{Residual blocks in ResNet-101 \cite{resnet-image}}
     \label{fig:resnet}
     
@@ -62,4 +61,4 @@ The auxilary classifier is a fully connected layer that takes the feature maps f
 
 \subsection{Training Setup}
 While training on data, the input is a 4-dimensional tensor with normalized RGB channels, and the labels are 2D tensors with integer values representing the class labels for each pixel. The output from the PyTorch model is a 4-dimensional tensor with the shape (N, 4, H, W), where N is the batch size, 4 is the number of classes, H is the height, and W is the width of the output. The output is a probability distribution over the classes for each pixel in the input image.
-\\ The model is trained with the cross-entropy loss function, which is minimized using the Adam optimizer. The model is trained for 100 epochs. The learning rate is set to 0.01. The training takes approximately 30 mins to complete. The model is evaluated 3 images. The evaluation metrics used are precision, mean intersection over union (mIoU) and pixel accuracy. 
+\\ The model is trained with the cross-entropy loss function, which is minimized using the Adam optimizer. The model is trained for 100 epochs. The learning rate is set to 0.01. The training takes approximately 30 mins to complete. The model is evaluated 3 images. The evaluation metrics used are precision, mean intersection over union (mIoU) and pixel accuracy.
