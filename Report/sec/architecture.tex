@@ -10,19 +10,17 @@ It take N feature maps as input from the ResNet-101 backbone and outputs N*4*H*W
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{Images/deeplabv3.png}
-    \caption{DeepLabv3 architecture \cite{deeplabv3-image}}
+    \caption{DeepLabv3 architecture~\cite{deeplabv3-image}}
     \label{fig:deeplabv3}
-
 \end{figure}
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{Images/atrous-convolution.png}
-    \caption{Atrous Spatial Pyramid Pooling (ASPP) in DeepLabv3\\ (a) Conv 3x3, rate=1 (b) Conv 3x3, rate=2 \\ \cite{atrous-convolution-image}}
+    \caption{Atrous Spatial Pyramid Pooling (ASPP) in DeepLabv3\\ (a) Conv 3x3, rate=1 (b) Conv 3x3, rate=2 \\
+    \cite{atrous-convolution-image}}
     \label{fig:atrous-convolution}
-
 \end{figure}
-% \cite{atrous-convolution-image}
 
 
 \subsection{ResNet-101 Backbone}
@@ -38,7 +36,6 @@ Here, N = 1, as we are training the model with a single image at a time (small d
     \includegraphics[width=0.5\textwidth]{Images/resnet.png}
     \caption{Residual blocks in ResNet-101 \cite{resnet-image}}
     \label{fig:resnet}
-    
 \end{figure}
 
 
