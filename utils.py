@@ -91,4 +91,3 @@ def F1_score(predicted_mask, true_mask):
     precision = np.sum(intersection) / np.sum(predicted_mask)
     recall = np.sum(intersection) / np.sum(true_mask)
     return 2 * precision * recall / (precision + recall)
-
