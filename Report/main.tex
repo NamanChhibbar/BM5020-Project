@@ -1,6 +1,10 @@
 \documentclass[10pt,twocolumn,letterpaper]{article}
-% \usepackage{cvpr}              % To produce the CAMERA-READY version
-\usepackage[review]{cvpr}      % To produce the REVIEW version
+
+%%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
+\usepackage{cvpr}
+\usepackage{cite}
+              % To produce the CAMERA-READY version
+% \usepackage[review]{cvpr}      % To produce the REVIEW version
 % \usepackage[pagenumbers]{cvpr} % To force page numbers, e.g. for an arXiv version
 
 % Import additional packages in the preamble file, before hyperref
@@ -15,41 +19,58 @@
 % (Or just hit 'q' on the first LaTeX run, let it finish, and you should be clear).
 \definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
 \usepackage[pagebackref,breaklinks,colorlinks,citecolor=cvprblue]{hyperref}
+% \bibliographystyle{ieee}
+% \bibliography{references}
+
 
 %%%%%%%%% PAPER ID  - PLEASE UPDATE
-\def\paperID{BM5020} % *** Enter the Paper ID here
-\def\confName{BM020}
+\def\paperID{*****} % *** Enter the Paper ID here
+\def\confName{CVPR}
+\def\confYear{2024}
+
+% It is strongly recommended to use hyperref, especially for the review version.
+% hyperref with option pagebackref eases the reviewers' job.
+% Please disable hyperref *only* if you encounter grave issues, 
+% e.g. with the file validation for the camera-ready version.
+%
+% If you comment hyperref and then uncomment it, you should delete *.aux before re-running LaTeX.
+% (Or just hit 'q' on the first LaTeX run, let it finish, and you should be clear).
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[pagebackref,breaklinks,colorlinks,citecolor=cvprblue]{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amsmath}
+
+%%%%%%%%% PAPER ID  - PLEASE UPDATE
+\def\paperID{*****} % *** Enter the Paper ID here
+\def\confName{CVPR}
 \def\confYear{2024}
 
 %%%%%%%%% TITLE - PLEASE UPDATE
-\title{ Vessel Tissue Detection During Third Space Endoscopy}
+\title{\ Tissue Segmentation during Endoscopy using Deep Learning}
 
-%%%%%%%%% AUTHORS - PLEASE UPDATE
+%%%%%%%% AUTHORS - PLEASE UPDATE
 \author{Pradeep Mundlik\\
-AI21btech11022\\
-% {\tt\small }
-% For a paper whose authors are all at the same institution,
-% omit the following lines up until the closing ``}''.
-% Additional authors and addresses can be added with ``\and'',
-% just like the second author.
-% To save space, use either the email address or home page, not both
+{\tt\small ai21btech11022@iith.ac.in}
 \and
 Naman Chhibhar\\
-MA21BTECH11021\\
-% First line of institution2 address\\
-% {\tt\small secondauthor@i2.org}
+{\tt\small ma21btech11011@iith.ac.in}
 }
+
 
 \begin{document}
 \maketitle
-\input{sec/0_abstract}    
-\input{sec/1_intro}
-% \input{sec/2_formatting}
-% \input{sec/3_finalcopy}
+\input{sec/abstract}    
+\input{sec/intro}
+\input{sec/methodology}
+\input{sec/architecture}
+\input{sec/results}
+\input{sec/references}
 {
     \small
+    \nocite{*}
     \bibliographystyle{ieeenat_fullname}
-    \bibliography{main}
+    % \bibliography{main}
 }
 
 % WARNING: do not forget to delete the supplementary pages from your submission 

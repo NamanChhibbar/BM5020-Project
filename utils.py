@@ -37,40 +37,31 @@ def preprocess_image(image):
     return image
 
 def postprocess_output(output, num_classes):
-    output = output.cpu().numpy().squeeze()
+    output = output.detach().numpy().squeeze()
     segmentation_map = np.argmax(output, axis=0)
     print(np.unique(segmentation_map))
     segmentation_map = cm.tab20(segmentation_map.astype(float) / num_classes)
     return segmentation_map
 
-def overlay_segmentation_mask(image, segmentation_map):
-    # if image and segmentation_map are tensors, convert them to numpy arrays
-    if torch.is_tensor(image):
-        image = image.cpu().numpy()
-        
-    if torch.is_tensor(segmentation_map):
-        segmentation_map = segmentation_map.cpu().numpy()
-    segmentation_map = segmentation_map[:, :, :3]
+def visualize_results(image, masks, input_boxes=None):
     
-    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-    image = image.astype(np.float32)
-    segmentation_map = segmentation_map.astype(np.float32)
-    image = cv2.addWeighted(image, 0.05, segmentation_map, 0.95, 0)
-    return image
-
-def visualize_results(image, segmentation_map):
-    _, axis = plt.subplots(1, 3, figsize=(15, 5))
-    for ax in axis:
-        ax.axis("off")
-    axis[0].imshow(image)
-    axis[0].set_title('Input Image')
-    axis[1].imshow(segmentation_map)
-    axis[1].set_title('Segmentation Mask')
-    axis[2].imshow(overlay_segmentation_mask(image, segmentation_map))
-    axis[2].set_title('Overlay')
+    fig, ax = plt.subplots(1, 2, figsize=(10, 5))
+    
+    ax[0].imshow(image)
+    ax[0].set_title('Input Image')
+    ax[0].axis('off')
+    
+    ax[1].set_title('Annoted Image')
+    ax[1].imshow(image)
+    for mask in masks:
+        show_mask(mask.cpu().numpy(), ax[1], random_color=True)
+    if input_boxes is not None:
+        for box in input_boxes:
+            show_box(+box.cpu().numpy(), plt.gca())
+    plt.axis('off')
     plt.show()
 
-def show_mask(mask, ax, random_color=False):
+def show_mask(mask, ax, random_color=True):
     if random_color:
         color = np.concatenate([np.random.random(3), np.array([0.6])], axis=0)
     else:
@@ -100,4 +91,3 @@ def F1_score(predicted_mask, true_mask):
     precision = np.sum(intersection) / np.sum(predicted_mask)
     recall = np.sum(intersection) / np.sum(true_mask)
     return 2 * precision * recall / (precision + recall)
-

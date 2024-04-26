@@ -2,16 +2,26 @@
 
 __pycache__/
 temp.ipynb
-data/
+Data/
 
 *.pth
 *.jpg
 
 *.pptx
+*.pdf
 
-Report/*.aux
-Report/*.log
-Report/*.toc
-Report/*.out
-Report/*.synctex.gz
+temp*
+*pkl
 
+Annoted_images/
+
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.brf
+*.blg
+*.bbl
+*.out
+*.bib
