@@ -2,8 +2,6 @@ import numpy as np
 import torch
 import cv2
 from matplotlib import pyplot as plt, cm
-from torch import nn
-import torchvision.models as models
 import torchvision.transforms as T
 
 def get_device():
@@ -13,20 +11,25 @@ def get_device():
         return torch.device("mps")
     return torch.device("cpu")
 
-# defining the model
-class Resnest(nn.Module):
-    def __init__(self, model_name='resnest101e'):
-        super().__init__()
-        self.model = models.resnet101(weights = models.ResNet101_Weights.IMAGENET1K_V2)
-        n_features = self.model.fc.in_features
-        self.model.fc = nn.Identity(n_features)
+def batch_files(files, batch_size):
+    files = np.array(files)
+    batches = []
+    for i in range(0, len(files), batch_size):
+        batches.append(files[i : i+batch_size])
+    return batches
 
-    def forward(self, x):
-        x = self.model(x)
-        x = x.unsqueeze(2)
-        x = x.unsqueeze(2)
-        return {"out": x, "aux": x} 
-    
+def files_to_tensors(files, im_dir, data_dict):
+    tensors, labels = [], []
+    for file in files:
+        image = cv2.imread(f"{im_dir}/{file}")
+        image = preprocess_image(image)
+        tensors.append(image)
+        im_labels = data_dict[file]
+        labels.append(im_labels)
+    tensors = np.array(tensors)
+    labels = np.array(labels)
+    return torch.tensor(tensors), torch.tensor(labels)
+
 # define the preprocessing function
 def preprocess_image(image):
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -39,7 +42,6 @@ def preprocess_image(image):
 def postprocess_output(output, num_classes):
     output = output.detach().numpy().squeeze()
     segmentation_map = np.argmax(output, axis=0)
-    print(np.unique(segmentation_map))
     segmentation_map = cm.tab20(segmentation_map.astype(float) / num_classes)
     return segmentation_map
 
@@ -81,13 +83,35 @@ def show_box(box, ax):
     w, h = box[2] - box[0], box[3] - box[1]
     ax.add_patch(plt.Rectangle((x0, y0), w, h, edgecolor='green', facecolor=(0,0,0,0), lw=2))
 
-def mIoU(predicted_mask, true_mask):
-    intersection = np.logical_and(predicted_mask, true_mask)
-    union = np.logical_or(predicted_mask, true_mask)
-    return np.sum(intersection) / np.sum(union)
+def pixel_accuracy(predicted_labels, true_labels):
+    return np.count_nonzero(predicted_labels == true_labels) / true_labels.numel()
 
-def F1_score(predicted_mask, true_mask):
-    intersection = np.logical_and(predicted_mask, true_mask)
-    precision = np.sum(intersection) / np.sum(predicted_mask)
-    recall = np.sum(intersection) / np.sum(true_mask)
-    return 2 * precision * recall / (precision + recall)
+def iou_score(predicted_labels, true_labels):
+    predicted_labels = np.array(predicted_labels)
+    true_labels = np.array(true_labels)
+    intersection = predicted_labels & true_labels
+    union = predicted_labels | true_labels
+    iou_scores = intersection.sum(axis=0) / union.sum(axis=0)
+    nan_filter = np.isnan(iou_scores)
+    iou_scores[nan_filter] = 0
+    return iou_scores.mean()
+
+def dice_score(predicted_labels, true_labels):
+    predicted_labels = np.array(predicted_labels)
+    true_labels = np.array(true_labels)
+    intersection = predicted_labels & true_labels
+    dice_scores = intersection.sum(axis=0) / (predicted_labels.sum(axis=0) + true_labels.sum(axis=0))
+    nan_filter = np.isnan(dice_scores)
+    dice_scores[nan_filter] = 0
+    return dice_scores.mean()
+
+def f1_score(predicted_labels, true_labels):
+    predicted_labels = np.array(predicted_labels)
+    true_labels = np.array(true_labels)
+    intersection = predicted_labels & true_labels
+    precisions = intersection.sum(axis=0) / predicted_labels.sum(axis=0)
+    recalls = intersection.sum(axis=0) / true_labels.sum(axis=0)
+    f1_scores = 2 * precisions * recalls / (precisions + recalls)
+    nan_filter = np.isnan(f1_scores)
+    f1_scores[nan_filter] = 0
+    return f1_scores.mean()

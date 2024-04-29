@@ -1,19 +1,15 @@
-.DS_store
-
 __pycache__/
-temp.ipynb
 Data/
+Annoted_images/
 
-*.pth
+.DS_store
 *.jpg
-
 *.pptx
 *.pdf
 
 temp*
-*pkl
-
-Annoted_images/
+*.pth
+*.pkl
 
 *.aux
 *.log

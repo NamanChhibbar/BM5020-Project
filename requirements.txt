@@ -88,18 +88,10 @@ pyzmq==26.0.0
 qtconsole==5.5.1
 QtPy==2.4.1
 referencing==0.34.0
-<<<<<<< HEAD
-regex==2024.4.16
-=======
->>>>>>> main
 requests==2.31.0
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
 rpds-py==0.18.0
-<<<<<<< HEAD
-safetensors==0.4.3
-=======
->>>>>>> main
 segment-anything==1.0
 Send2Trash==1.8.3
 six==1.16.0
