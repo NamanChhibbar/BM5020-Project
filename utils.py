@@ -11,11 +11,19 @@ def get_device():
         return torch.device("mps")
     return torch.device("cpu")
 
-def batch_files(files, batch_size):
-    files = np.array(files)
+def train_test_split(data, train_ratio, shuffle):
+    if shuffle:
+        np.random.shuffle(data)
+    train_idx = int(len(data) * train_ratio)
+    train_set = data[:train_idx]
+    test_set = data[train_idx:]
+    return train_set, test_set
+
+def batch_data(data, batch_size):
+    data = np.array(data)
     batches = []
-    for i in range(0, len(files), batch_size):
-        batches.append(files[i : i+batch_size])
+    for i in range(0, len(data), batch_size):
+        batches.append(data[i:i+batch_size])
     return batches
 
 def files_to_tensors(files, im_dir, data_dict):
@@ -84,34 +92,36 @@ def show_box(box, ax):
     ax.add_patch(plt.Rectangle((x0, y0), w, h, edgecolor='green', facecolor=(0,0,0,0), lw=2))
 
 def pixel_accuracy(predicted_labels, true_labels):
-    return np.count_nonzero(predicted_labels == true_labels) / true_labels.numel()
+    predicted_labels = np.array(predicted_labels)
+    true_labels = np.array(true_labels)
+    correct_labels = (predicted_labels == true_labels).sum()
+    accuracy = correct_labels / true_labels.size
+    return accuracy
 
 def iou_score(predicted_labels, true_labels):
     predicted_labels = np.array(predicted_labels)
     true_labels = np.array(true_labels)
-    intersection = predicted_labels & true_labels
-    union = predicted_labels | true_labels
-    iou_scores = intersection.sum(axis=0) / union.sum(axis=0)
-    nan_filter = np.isnan(iou_scores)
-    iou_scores[nan_filter] = 0
+    intersections = (predicted_labels & true_labels).sum(axis=(1, 2))
+    unions = (predicted_labels | true_labels).sum(axis=(1, 2))
+    iou_scores = intersections / unions
+    iou_scores = np.nan_to_num(iou_scores)
     return iou_scores.mean()
 
 def dice_score(predicted_labels, true_labels):
     predicted_labels = np.array(predicted_labels)
     true_labels = np.array(true_labels)
-    intersection = predicted_labels & true_labels
-    dice_scores = intersection.sum(axis=0) / (predicted_labels.sum(axis=0) + true_labels.sum(axis=0))
-    nan_filter = np.isnan(dice_scores)
-    dice_scores[nan_filter] = 0
+    intersections = (predicted_labels & true_labels).sum(axis=(1, 2))
+    denominator = predicted_labels.sum(axis=(1, 2)) + true_labels.sum(axis=(1, 2))
+    dice_scores = intersections / denominator
+    dice_scores = np.nan_to_num(dice_scores)
     return dice_scores.mean()
 
 def f1_score(predicted_labels, true_labels):
     predicted_labels = np.array(predicted_labels)
     true_labels = np.array(true_labels)
-    intersection = predicted_labels & true_labels
-    precisions = intersection.sum(axis=0) / predicted_labels.sum(axis=0)
-    recalls = intersection.sum(axis=0) / true_labels.sum(axis=0)
+    intersections = (predicted_labels & true_labels).sum(axis=(1, 2))
+    precisions = intersections / predicted_labels.sum(axis=(1, 2))
+    recalls = intersections / true_labels.sum(axis=(1, 2))
     f1_scores = 2 * precisions * recalls / (precisions + recalls)
-    nan_filter = np.isnan(f1_scores)
-    f1_scores[nan_filter] = 0
+    f1_scores = np.nan_to_num(f1_scores)
     return f1_scores.mean()
