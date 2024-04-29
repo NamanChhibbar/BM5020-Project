@@ -4,12 +4,14 @@ import cv2
 from matplotlib import pyplot as plt, cm
 import torchvision.transforms as T
 
+np.random.seed(0)
+
 def get_device():
     if torch.cuda.is_available():
-        return torch.device("cuda")
+        return "cuda"
     if torch.backends.mps.is_available():
-        return torch.device("mps")
-    return torch.device("cpu")
+        return "mps"
+    return "cpu"
 
 def train_test_split(data, train_ratio, shuffle):
     if shuffle:
