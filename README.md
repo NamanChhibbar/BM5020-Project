@@ -49,7 +49,7 @@ deactivate
 
 Images must be stored in jpg format and the labels in a pickle file containing a python dictionary which maps the image file names to a `torch.tensor` of size `H x W`, where `H` and `W` the height and width of the image respectively. The `i, j`th value of the tensors should correspond to the label of `i, j`th pixel in the image.
 
-Both the images and pickle file should be stored in a directory whose location is stored in the variable `im_dir` in the [main file](main.ipynb). Update these before training.
+Both the images and pickle file should be stored in a directory whose location is stored in the variable `im_dir` in [main.ipynb](main.ipynb). Update these before training.
 
 ## Generating labels using Segment Anything Model (SAM)
 
