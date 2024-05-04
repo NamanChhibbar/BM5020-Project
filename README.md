@@ -1,10 +1,14 @@
 # AI in Biomedicine and Healthcare [BM5020]
+
 # Project : Vessel and tissue recognition during third-space Endoscopy using a deep learning algorithm
+
 ## Team Members
+
 - **Pradeep Mundlik, ai21btech11022@iith.ac.in**
 - **Naman Chhibbar, ma21btech11011@iith.ac.in**
 
-## Given Repository is structured as follows:
+## Repository structure
+
 1. **main.ipynb**: Notebook containing model training and evaluation.
 2. **annotations.ipynb**: Notebook used for annotating images to generate ground truth.
 3. **utils.py**: Python file containing some functions to help with our analysis.
