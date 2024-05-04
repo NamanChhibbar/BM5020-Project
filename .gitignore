@@ -5,7 +5,6 @@ Annoted_images/
 .DS_store
 *.jpg
 *.pptx
-Vessel_tissue_recognition.pdf
 
 temp*
 *.pth
