@@ -1,6 +1,6 @@
 # AI in Biomedicine and Healthcare [BM5020]
 
-## Tissue recognition during third-space Endoscopy using deep learning
+## Tissue Recognition during Third-Space Endoscopy
 
 ### Team Members
 
